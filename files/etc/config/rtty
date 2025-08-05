@@ -1,5 +1,5 @@
 config rtty
-#   option  interface   'lan'
+#   option  interface   'Default'
     option  id          'XBD'
     option  description 'XinBeiDi Tech'
     option  host        '183.56.160.246'  
