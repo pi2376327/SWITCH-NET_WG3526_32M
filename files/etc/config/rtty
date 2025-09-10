@@ -1,7 +1,7 @@
 config rtty
 #   option  interface   'Default'
-    option  id          'XBD'
-    option  description 'XinBeiDi Tech'
+    option  id          'Default'
+    option  description 'Default Tech'
     option  host        '183.56.160.246'  
     option  port        '5912'                              
     option  token       'switch-net.com'    
