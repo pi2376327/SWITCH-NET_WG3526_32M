@@ -104,7 +104,7 @@ echo 'nameserver 127.0.0.1' > /etc/resolv.conf #增加dns指向本机dnsmasq
 
 #修改版本名称
 sed -i '/DISTRIB_REVISION/d' /etc/openwrt_release
-echo "DISTRIB_REVISION='R24.08.05'" >> /etc/openwrt_release
+echo "DISTRIB_REVISION='R25.09.10'" >> /etc/openwrt_release
 sed -i '/DISTRIB_DESCRIPTION/d' /etc/openwrt_release
 echo "DISTRIB_DESCRIPTION='SWITCH-NET_CPE '" >> /etc/openwrt_release
 
@@ -116,5 +116,6 @@ echo '*/5 * * * * /etc/init.d/frpc start' >> /etc/crontabs/root ###每5分钟自
 
 #删除多余配置
 rm -rf /etc/config/openvpn_recipes #openvpn自带模版配置
+head -n 21 /etc/profile > tempfile && mv tempfile /etc/profile #删除自带多余banner
 
 exit 0
