@@ -1,2 +1,2 @@
-client
+switch-net
 switch-net.com
