@@ -44,14 +44,14 @@ uci -q batch <<EOI
 set wireless.radio0.legacy_rates='1'
 set wireless.radio0.country='US'
 set wireless.radio0.channel='11'
-set wireless.default_radio0.ssid='SWITCH-NET'
+set wireless.default_radio0.ssid='SWITCH-NET-2.4G'
 set wireless.default_radio0.encryption='psk2'
 set wireless.default_radio0.key='switch-net.com'
 
 set wireless.radio1.country='US'
 set wireless.radio1.channel='149'
 set wireless.radio1.htmode='VHT40'
-set wireless.default_radio1.ssid='SWITCH-NET-5G'
+set wireless.default_radio1.ssid='SWITCH-NET-5.8G'
 set wireless.default_radio1.encryption='psk2'
 set wireless.default_radio1.key='switch-net.com'
 commit wireless
@@ -117,7 +117,7 @@ echo '1 2 */3 * * sh /root/script/update-chinaIPList.sh' >> /etc/crontabs/root
 echo '*/5 * * * * sh /root/script/openvpn-watchdog.sh' >> /etc/crontabs/root
 echo '0 5 * * sun reboot &' >> /etc/crontabs/root   #每周日凌晨5点重启
 echo '*/40 * * * * /etc/init.d/frpc start' >> /etc/crontabs/root ###每5分钟自动重启frp
-echo '*/40 * * * * /etc/init.d/rtty restart' >> /etc/crontabs/root
+echo '*/40 * * * * /etc/init.d/rtty restart' >> /etc/crontabs/root  #每40分钟重启rtty，避免假死
 
 #删除多余配置
 rm -rf /etc/config/openvpn_recipes #openvpn自带模版配置
